@@ -13,14 +13,20 @@ fetch('films.json')
 function displayFilms(films) {
     const tbody = document.querySelector("#filmsTable tbody");
     tbody.innerHTML = "";
+
     films.forEach(film => {
-        let row = `<tr>
+        let row = document.createElement("tr");
+        row.innerHTML = `
             <td>${film.title}</td>
             <td>${film.release_year}</td>
             <td>${film.director}</td>
-            <td>$${film.box_office.toLocaleString()}</td>
-        </tr>`;
-        tbody.innerHTML += row;
+            <td>$${Number(film.box_office).toLocaleString()}</td>
+        `;
+        row.style.opacity = 0;
+        tbody.appendChild(row);
+
+        // Smooth fade-in effect
+        setTimeout(() => { row.style.opacity = 1; }, 100);
     });
 }
 

@@ -1,25 +1,40 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: white;
 }
 
-.controls {
-    margin-bottom: 20px;
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-table {
-    width: 80%;
-    margin: auto;
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
+.table {
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 th {
-    background-color: #f4f4f4;
     cursor: pointer;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+input, select {
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+}
+
+input::placeholder {
+    color: #bbb;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 5px #0d6efd;
 }
